@@ -9,13 +9,13 @@ public class CarRacingCompetition {
 
     private List<Car> joinCarList = null;
 
-    private CarRacingCompetition(){
+    private CarRacingCompetition(String strJoinCarList){
         this.joinCarList = new ArrayList<Car>();
+        setJoinCarList(strJoinCarList);
     }
 
-    public static void startRacing(String strJoinCarList){
-        CarRacingCompetition carRacingCompetition = new CarRacingCompetition();
-        carRacingCompetition.setJoinCarList(strJoinCarList);
+    public static CarRacingCompetition getCarRacingCompetion(String strJoinCarList){
+        return new CarRacingCompetition(strJoinCarList);
     }
 
     private void setJoinCarList(String strJoinCarList) throws NullPointerException, IllegalArgumentException{
