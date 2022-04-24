@@ -19,6 +19,27 @@ public class CarRacingCompetitonTest {
     }
 
     @Test
+    @DisplayName("시도_횟수_유효성_확인")
+    void 시도_횟수_유효성_확인(){
+        Assertions.assertThatThrownBy(
+                        ()-> {
+                            CarRacingCompetition carRacingCompetition
+                                    = CarRacingCompetition.getCarRacingCompetion("shin,jin") ;
+                            carRacingCompetition.startRacing("5s");
+                        })
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessageContaining("숫자가 아닌 다른 값이 입력되었습니다.");
+        Assertions.assertThatThrownBy(
+                        ()-> {
+                            CarRacingCompetition carRacingCompetition
+                                    = CarRacingCompetition.getCarRacingCompetion("shin,jin") ;
+                            carRacingCompetition.startRacing("-2147483648");
+                        })
+                .isInstanceOf(IllegalStateException.class)
+                .hasMessageContaining("0 미만의 숫자값이 입력되었습니다.");
+    }
+
+    @Test
     @DisplayName("참가_자동차_이름_길이_확인")
     void 참가_자동차_이름_길이_확인(){
         Assertions.assertThatThrownBy(
