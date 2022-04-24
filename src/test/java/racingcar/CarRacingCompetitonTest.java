@@ -16,6 +16,7 @@ public class CarRacingCompetitonTest {
         참여_자동차명의_공백값_여부_확인();
         참가_자동차_이름_길이_확인();
         참가_자동차_명단_등록();
+        시도_횟수_유효성_확인();
     }
 
     @Test
