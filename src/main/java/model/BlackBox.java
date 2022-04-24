@@ -46,4 +46,8 @@ public class BlackBox {
     public void writeRecord(boolean isGo){
         accelRecord.add(isGo);
     }
+
+    public int readRecordSize(){
+        return accelRecord.size();
+    }
 }
