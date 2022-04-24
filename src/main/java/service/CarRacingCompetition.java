@@ -18,7 +18,7 @@ public class CarRacingCompetition {
         return new CarRacingCompetition(strJoinCarList);
     }
 
-    private void setJoinCarList(String strJoinCarList) throws NullPointerException, IllegalArgumentException{
+    private void setJoinCarList(String strJoinCarList){
         checkNull(strJoinCarList, "참여하는 자동차의 명단이 null 입니다.");
         checkSpliterOnString(strJoinCarList);
         setJoinCarList(strJoinCarList.split(",", 0));
@@ -26,9 +26,18 @@ public class CarRacingCompetition {
 
     private void setJoinCarList(String[] arrJoinCarName){
         for(String joinCarName : arrJoinCarName){
+            joinCarName = joinCarName.trim();
             checkSpaceOnString(joinCarName);
+            checkNameLength(joinCarName);
             addCar(new Car(joinCarName));
         }
+    }
+
+    private void checkNameLength(String joinCarName) throws IllegalStateException {
+        if(joinCarName.length()<=5){
+            return;
+        }
+        throw new IllegalStateException("참가 자동차의 이름이 6글자 이상입니다.");
     }
 
     private void addCar(Car car){
@@ -36,7 +45,7 @@ public class CarRacingCompetition {
     }
 
     private void checkSpaceOnString(String carName) throws IllegalArgumentException{
-        if(!carName.contentEquals(" ")){
+        if(!carName.equals("")){
             return;
         }
         throw new IllegalArgumentException("참여 자동차명이 공백값 입니다.");

@@ -14,16 +14,24 @@ public class CarRacingCompetitonTest {
         자동차_명단의_null_체크();
         자동차_명단의_구분자_체크();
         참여_자동차명의_공백값_여부_확인();
+        참가_자동차_이름_길이_확인();
         참가_자동차_명단_등록();
+    }
+
+    @Test
+    @DisplayName("참가_자동차_이름_길이_확인")
+    void 참가_자동차_이름_길이_확인(){
+        Assertions.assertThatThrownBy(
+                ()->CarRacingCompetition.getCarRacingCompetion("shins,jin  s"))
+                .isInstanceOf(IllegalStateException.class)
+                .hasMessageContaining("참가 자동차의 이름이 6글자 이상입니다.");
     }
 
     @Test
     @DisplayName("참가_자동차_명단_등록")
     void 참가_자동차_명단_등록(){
         Assertions.assertThatNoException().isThrownBy(
-                ()-> {
-                    CarRacingCompetition.getCarRacingCompetion("shin,jin");
-                }
+                ()-> CarRacingCompetition.getCarRacingCompetion("shin,jin")
         );
     }
 
