@@ -35,9 +35,9 @@ public class BlackBox {
     }
 
     private int getUableTime(int time){
-        if(time<0){
+        if(time<=0){
             return 0;
-        }else if(time > accelRecord.size()){
+        }else if(time >= accelRecord.size()){
             return accelRecord.size();
         }
         throw new IllegalStateException("예상하지 못한 예외 발생");
