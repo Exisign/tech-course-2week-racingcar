@@ -29,6 +29,10 @@ public class Car {
         return blackBox.readAccelCount(startTime, endTime);
     }
 
+    public int readBlackBoxRecordSize(){
+        return blackBox.readRecordSize();
+    }
+
     public void tryAccel(int accelCount) {
         for(int i = 0; i < accelCount; i++) {
             tryAccel();
