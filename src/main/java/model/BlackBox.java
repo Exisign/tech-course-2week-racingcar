@@ -34,13 +34,14 @@ public class BlackBox {
         return startTime < endTime ? endTime : startTime;
     }
 
-    private int getUableTime(int time){
+    private int getUableTime(int time) {
         if(time<=0){
             return 0;
-        }else if(time >= accelRecord.size()){
-            return accelRecord.size();
         }
-        throw new IllegalStateException("예상하지 못한 예외 발생");
+//        else if(time >= accelRecord.size()){
+//        }
+        return accelRecord.size();
+//        throw new IllegalStateException("[ERROR]예상하지 못한 예외 발생");
     }
 
     public void writeRecord(boolean isGo){

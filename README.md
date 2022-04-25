@@ -22,27 +22,27 @@
       - [X] random으로 얻은 1-9사이의 값
         - [X] 4이상일 경우 전진
         - [X] 3이하일 경우 멈춘다 
-      - [ ] 게임을 완료하면 우승자를 알려준다 
-        - [ ] 우승자가 한명 이상일 경우
-        - [ ] ','로 이름을 구분해서 출력한다.
+      - [X] 게임을 완료하면 우승자를 알려준다 
+        - [X] 우승자가 한명 이상일 경우
+        - [X] ','로 이름을 구분해서 출력한다.
           
    3. 사용자가 잘못 된 값을 입력할 경우 
       - [X] IllegalArgument, IllegalStateException 등 명확한 Exception을 발생시킨다
       - [X] 에러는 [ERROR] 로 시작하게 구성한다
-      - [ ] 에러 발생시 해당 부분부터 다시 입력 받는다
+      - [X] 에러 발생시 해당 부분부터 다시 입력 받는다
 2. 입출력 요구사항
    * 요구사항 파일 별도 확인
 3. 프로그래밍 요구사항
    1. 기본사항
       - [X] 시작부는 Application.main()
       - [X] JDK 8 환경에서의 실행
-      - [ ] 유틸 사용 규정
+      - [X] 유틸 사용 규정
         * Random 및 Scanner의 사용
             * Random
               * camp.nextstep.edu.missionutils.missionutils.pickNumberInRange()
             * ReadLine
               * camp.nextstep.edu.missionutils.Console.readLine()
-      - [ ] 기본적으로 주어진 2개의 Test Case를 모두 만족해야 한다.
+      - [X] 기본적으로 주어진 2개의 Test Case를 모두 만족해야 한다.
    2. 코드 작성 규정
       - [X] 1주차 내용
       - [X] 일급 콜렉션을 활용한 구현
